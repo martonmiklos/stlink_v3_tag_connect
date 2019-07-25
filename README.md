@@ -1,6 +1,6 @@
 # STLink-v3 to Tag connect TC2030-MCP adapter board
 
-Replacement board for the MB1440 to expose the SWIM and SWD/SWO interface to RJ10 for the TAG-connect TC2030-MCP adapter cable.
+Replacement board for the MB1440 to expose the SWIM and SWD/SWO interface to RJ12 for the TAG-connect TC2030-MCP adapter cable.
 
 SWIM level shifter interface is reverse engineered from the MB1440. 
 

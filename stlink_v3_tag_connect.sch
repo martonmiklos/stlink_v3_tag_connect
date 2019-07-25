@@ -14516,18 +14516,18 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="R18" library="rcl" deviceset="R-EU_" device="R0603" value="1K">
 <attribute name="OC_FARNELL" value="2130354"/>
 </part>
-<part name="LED2" library="SparkFun" deviceset="LED" device="0603" value="Red"/>
+<part name="LED_TGT_VCC" library="SparkFun" deviceset="LED" device="0603" value="Red"/>
 <part name="SUPPLY9" library="supply2" deviceset="DGND" device=""/>
 <part name="R19" library="rcl" deviceset="R-EU_" device="R0603" value="1K">
 <attribute name="OC_FARNELL" value="2130354"/>
 </part>
-<part name="LED1" library="SparkFun" deviceset="LED" device="0603" value="Red"/>
+<part name="LED_+3V3" library="SparkFun" deviceset="LED" device="0603" value="Red"/>
 <part name="SUPPLY1" library="supply2" deviceset="DGND" device=""/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 <part name="R20" library="rcl" deviceset="R-EU_" device="R0603" value="1K">
 <attribute name="OC_FARNELL" value="2130354"/>
 </part>
-<part name="LED3" library="SparkFun" deviceset="LED" device="0603" value="Red"/>
+<part name="LED_VUSB" library="SparkFun" deviceset="LED" device="0603" value="Red"/>
 <part name="SUPPLY2" library="supply2" deviceset="DGND" device=""/>
 <part name="FRAME2" library="martonmiklos" deviceset="A4L-LOC" device="" value="PAGE1"/>
 <part name="FRAME3" library="martonmiklos" deviceset="A4L-LOC" device="" value="PAGE1"/>
@@ -14626,7 +14626,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="NAME" x="18.8214" y="138.43" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="23.622" y="138.43" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="LED2" gate="G$1" x="20.32" y="132.08" smashed="yes">
+<instance part="LED_TGT_VCC" gate="G$1" x="20.32" y="132.08" smashed="yes">
 <attribute name="NAME" x="23.876" y="127.508" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="26.035" y="127.508" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -14638,7 +14638,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="NAME" x="31.5214" y="138.43" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="36.322" y="138.43" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="LED1" gate="G$1" x="33.02" y="132.08" smashed="yes">
+<instance part="LED_+3V3" gate="G$1" x="33.02" y="132.08" smashed="yes">
 <attribute name="NAME" x="36.576" y="127.508" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="38.735" y="127.508" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -14653,7 +14653,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="NAME" x="41.6814" y="138.43" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="46.482" y="138.43" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="LED3" gate="G$1" x="43.18" y="132.08" smashed="yes">
+<instance part="LED_VUSB" gate="G$1" x="43.18" y="132.08" smashed="yes">
 <attribute name="NAME" x="46.736" y="127.508" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="48.895" y="127.508" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -14930,17 +14930,17 @@ In this library the device names are the same as the pin names of the symbols, t
 <net name="DGND" class="0">
 <segment>
 <wire x1="20.32" y1="124.46" x2="20.32" y2="127" width="0.1524" layer="91"/>
-<pinref part="LED2" gate="G$1" pin="C"/>
+<pinref part="LED_TGT_VCC" gate="G$1" pin="C"/>
 <pinref part="SUPPLY9" gate="G$1" pin="DGND"/>
 </segment>
 <segment>
 <wire x1="33.02" y1="124.46" x2="33.02" y2="127" width="0.1524" layer="91"/>
-<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="LED_+3V3" gate="G$1" pin="C"/>
 <pinref part="SUPPLY1" gate="G$1" pin="DGND"/>
 </segment>
 <segment>
 <wire x1="43.18" y1="124.46" x2="43.18" y2="127" width="0.1524" layer="91"/>
-<pinref part="LED3" gate="G$1" pin="C"/>
+<pinref part="LED_VUSB" gate="G$1" pin="C"/>
 <pinref part="SUPPLY2" gate="G$1" pin="DGND"/>
 </segment>
 </net>
@@ -14948,21 +14948,21 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <wire x1="20.32" y1="134.62" x2="20.32" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="R18" gate="G$1" pin="1"/>
-<pinref part="LED2" gate="G$1" pin="A"/>
+<pinref part="LED_TGT_VCC" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <wire x1="33.02" y1="134.62" x2="33.02" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="R19" gate="G$1" pin="1"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
+<pinref part="LED_+3V3" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
 <wire x1="43.18" y1="134.62" x2="43.18" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="R20" gate="G$1" pin="1"/>
-<pinref part="LED3" gate="G$1" pin="A"/>
+<pinref part="LED_VUSB" gate="G$1" pin="A"/>
 </segment>
 </net>
 </nets>
