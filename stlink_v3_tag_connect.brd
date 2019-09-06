@@ -77,18 +77,18 @@
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Patch_Top" color="12" fill="4" visible="no" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="no" active="yes"/>
-<layer number="103" name="ATT_MISO" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="103" name="ATT_MISO" color="7" fill="1" visible="no" active="yes"/>
 <layer number="104" name="Name" color="7" fill="1" visible="no" active="yes"/>
-<layer number="105" name="Beschreib" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="106" name="BGA-Top" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="107" name="BD-Top" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="108" name="centerline" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="105" name="Beschreib" color="7" fill="1" visible="no" active="yes"/>
+<layer number="106" name="BGA-Top" color="7" fill="1" visible="no" active="yes"/>
+<layer number="107" name="BD-Top" color="7" fill="1" visible="no" active="yes"/>
+<layer number="108" name="centerline" color="7" fill="1" visible="no" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="126" name="_bNames" color="5" fill="1" visible="no" active="yes"/>
-<layer number="131" name="prix" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="132" name="test" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="131" name="prix" color="7" fill="1" visible="no" active="yes"/>
+<layer number="132" name="test" color="7" fill="1" visible="no" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="no"/>
 <layer number="201" name="201bmp" color="2" fill="1" visible="no" active="no"/>
@@ -1330,6 +1330,9 @@ TME order codes:&lt;br&gt;
 <pad name="STDC_14_2" x="-27.315" y="3.81" drill="0.65" rot="R90"/>
 <wire x1="4.28" y1="24.95" x2="-28.41" y2="24.95" width="0" layer="20"/>
 <wire x1="4.28" y1="24.95" x2="4.28" y2="-24.95" width="0" layer="20"/>
+<wire x1="-35.56" y1="12.25" x2="-35.56" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="-35.56" y1="-12.25" x2="-34.29" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="-35.56" y1="12.25" x2="-34.29" y2="12.25" width="0.127" layer="51"/>
 </package>
 </packages>
 </library>
@@ -1704,9 +1707,6 @@ TME order codes:&lt;br&gt;
 <wire x1="-16.18" y1="0.75" x2="-16.625" y2="0.75" width="0.254" layer="1"/>
 <wire x1="-16.625" y1="0.75" x2="-16.93" y2="1.055" width="0.254" layer="1"/>
 <wire x1="-16.93" y1="1.055" x2="-16.93" y2="2.54" width="0.254" layer="1"/>
-<wire x1="-16.93" y1="2.54" x2="-16.93" y2="7.7225" width="0.254" layer="1"/>
-<wire x1="-16.93" y1="7.7225" x2="-17.4625" y2="8.255" width="0.254" layer="1"/>
-<wire x1="-17.4625" y1="8.255" x2="-19.05" y2="8.255" width="0.254" layer="1"/>
 <wire x1="-16.18" y1="0.75" x2="-14.49" y2="0.75" width="0.254" layer="1"/>
 <wire x1="-14.49" y1="0.75" x2="-14.2875" y2="0.9525" width="0.254" layer="1"/>
 <wire x1="-14.2875" y1="0.9525" x2="-14.2875" y2="1.69" width="0.254" layer="1"/>
@@ -1716,6 +1716,8 @@ TME order codes:&lt;br&gt;
 <wire x1="-30.226" y1="7.112" x2="-28.194" y2="9.144" width="0.254" layer="16"/>
 <wire x1="-19.939" y1="9.144" x2="-19.05" y2="8.255" width="0.254" layer="16"/>
 <wire x1="-28.194" y1="9.144" x2="-19.939" y2="9.144" width="0.254" layer="16"/>
+<wire x1="-16.93" y1="2.54" x2="-16.93" y2="6.135" width="0.254" layer="1"/>
+<wire x1="-16.93" y1="6.135" x2="-19.05" y2="8.255" width="0.254" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

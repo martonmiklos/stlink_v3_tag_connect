@@ -172,12 +172,49 @@ DIN A4, landscape with location and doc. field</description>
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 </symbol>
+<symbol name="VUSB">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="0" y="1.27" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
+<pin name="VUSB" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+<symbol name="TARGET_VCC">
+<wire x1="1.27" y1="0.635" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="-1.27" y2="0.635" width="0.254" layer="94"/>
+<text x="0" y="3.81" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
+<pin name="TARGET_VCC" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GND" prefix="GND">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="VUSB" prefix="P+">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="VUSB" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TARGET_VCC">
+<gates>
+<gate name="G$1" symbol="TARGET_VCC" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -6271,6 +6308,9 @@ TME order codes:&lt;br&gt;
 <pad name="STDC_14_2" x="-27.315" y="3.81" drill="0.65" rot="R90"/>
 <wire x1="4.28" y1="24.95" x2="-28.41" y2="24.95" width="0" layer="20"/>
 <wire x1="4.28" y1="24.95" x2="4.28" y2="-24.95" width="0" layer="20"/>
+<wire x1="-35.56" y1="12.25" x2="-35.56" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="-35.56" y1="-12.25" x2="-34.29" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="-35.56" y1="12.25" x2="-34.29" y2="12.25" width="0.127" layer="51"/>
 </package>
 </packages>
 <symbols>
@@ -6367,6 +6407,11 @@ TME order codes:&lt;br&gt;
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="CON1" library="stlinkv3" deviceset="STLINK_V3_HAT_SWD/JTAG_MINIMAL" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
+<part name="P+1" library="supply1" deviceset="VUSB" device=""/>
+<part name="P+2" library="supply1" deviceset="VUSB" device=""/>
+<part name="U$1" library="supply1" deviceset="TARGET_VCC" device=""/>
+<part name="U$2" library="supply1" deviceset="TARGET_VCC" device=""/>
+<part name="U$3" library="supply1" deviceset="TARGET_VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6382,8 +6427,8 @@ Tag connect hat
 <attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94" font="vector"/>
 <attribute name="SHEET_HEADLINE" x="162.56" y="20.32" size="1.778" layer="94" font="vector"/>
 </instance>
-<instance part="GND2" gate="1" x="30.48" y="63.5" smashed="yes">
-<attribute name="VALUE" x="27.94" y="60.96" size="1.27" layer="96" font="vector"/>
+<instance part="GND2" gate="1" x="27.94" y="63.5" smashed="yes">
+<attribute name="VALUE" x="25.4" y="60.96" size="1.27" layer="96" font="vector"/>
 </instance>
 <instance part="J1" gate="G$1" x="218.44" y="99.06" smashed="yes">
 <attribute name="NAME" x="208.28" y="114.3" size="1.27" layer="95" font="vector"/>
@@ -6439,11 +6484,26 @@ Tag connect hat
 <instance part="CON1" gate="_JTAG/SWD" x="50.8" y="76.2" smashed="yes">
 <attribute name="NAME" x="46.99" y="86.995" size="1.27" layer="95" font="vector"/>
 </instance>
-<instance part="CON1" gate="CENTER_HOLE" x="53.34" y="109.22" smashed="yes">
-<attribute name="NAME" x="46.99" y="112.395" size="1.27" layer="95" font="vector"/>
+<instance part="CON1" gate="CENTER_HOLE" x="38.1" y="116.84" smashed="yes" rot="R90">
+<attribute name="NAME" x="31.75" y="120.015" size="1.27" layer="95" font="vector"/>
 </instance>
 <instance part="GND1" gate="1" x="38.1" y="101.6" smashed="yes">
 <attribute name="VALUE" x="35.56" y="99.06" size="1.27" layer="96" font="vector"/>
+</instance>
+<instance part="P+1" gate="G$1" x="99.06" y="170.18" smashed="yes">
+<attribute name="VALUE" x="99.06" y="171.45" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="P+2" gate="G$1" x="147.32" y="165.1" smashed="yes">
+<attribute name="VALUE" x="147.32" y="166.37" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="U$1" gate="G$1" x="76.2" y="167.64" smashed="yes">
+<attribute name="VALUE" x="76.2" y="171.45" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="U$2" gate="G$1" x="190.5" y="162.56" smashed="yes">
+<attribute name="VALUE" x="190.5" y="166.37" size="1.778" layer="96" align="bottom-center"/>
+</instance>
+<instance part="U$3" gate="G$1" x="193.04" y="106.68" smashed="yes">
+<attribute name="VALUE" x="193.04" y="110.49" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 </instances>
 <busses>
@@ -6451,18 +6511,18 @@ Tag connect hat
 <nets>
 <net name="GND" class="0">
 <segment>
-<wire x1="33.02" y1="76.2" x2="30.48" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="76.2" x2="27.94" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="30.48" y1="76.2" x2="30.48" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="71.12" x2="30.48" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="78.74" x2="30.48" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="78.74" x2="30.48" y2="76.2" width="0.1524" layer="91"/>
-<junction x="30.48" y="76.2"/>
+<wire x1="27.94" y1="76.2" x2="27.94" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="71.12" x2="27.94" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="78.74" x2="27.94" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="78.74" x2="27.94" y2="76.2" width="0.1524" layer="91"/>
+<junction x="27.94" y="76.2"/>
 <pinref part="CON1" gate="_JTAG/SWD" pin="GND@1"/>
 <pinref part="CON1" gate="_JTAG/SWD" pin="GND@2"/>
 <pinref part="CON1" gate="_JTAG/SWD" pin="GND_DET"/>
-<wire x1="33.02" y1="71.12" x2="30.48" y2="71.12" width="0.1524" layer="91"/>
-<junction x="30.48" y="71.12"/>
+<wire x1="33.02" y1="71.12" x2="27.94" y2="71.12" width="0.1524" layer="91"/>
+<junction x="27.94" y="71.12"/>
 </segment>
 <segment>
 <pinref part="GND4" gate="1" pin="GND"/>
@@ -6505,7 +6565,7 @@ Tag connect hat
 </segment>
 <segment>
 <pinref part="CON1" gate="CENTER_HOLE" pin="1"/>
-<wire x1="50.8" y1="109.22" x2="38.1" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="114.3" x2="38.1" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="38.1" y1="109.22" x2="38.1" y2="104.14" width="0.1524" layer="91"/>
 </segment>
@@ -6539,14 +6599,14 @@ Tag connect hat
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="VCCA"/>
-<wire x1="149.86" y1="152.4" x2="127" y2="152.4" width="0.1524" layer="91"/>
-<label x="127" y="152.4" size="1.27" layer="95" font="vector" ratio="10" rot="R180" xref="yes"/>
+<wire x1="149.86" y1="152.4" x2="147.32" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="P+2" gate="G$1" pin="VUSB"/>
+<wire x1="147.32" y1="162.56" x2="147.32" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="162.56" x2="99.06" y2="167.64" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="167.64" x2="104.14" y2="167.64" width="0.1524" layer="91"/>
-<label x="104.14" y="167.64" size="1.27" layer="95" font="vector" ratio="10" xref="yes"/>
+<pinref part="P+1" gate="G$1" pin="VUSB"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6625,20 +6685,20 @@ Tag connect hat
 <wire x1="182.88" y1="160.02" x2="190.5" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="190.5" y1="160.02" x2="190.5" y2="154.94" width="0.1524" layer="91"/>
-<label x="193.04" y="160.02" size="1.27" layer="95" font="vector" ratio="10" xref="yes"/>
-<wire x1="190.5" y1="160.02" x2="193.04" y2="160.02" width="0.1524" layer="91"/>
 <junction x="190.5" y="160.02"/>
+<pinref part="U$2" gate="G$1" pin="TARGET_VCC"/>
+<wire x1="190.5" y1="162.56" x2="190.5" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="6"/>
-<wire x1="208.28" y1="104.14" x2="162.56" y2="104.14" width="0.1524" layer="91"/>
-<label x="162.56" y="104.14" size="1.27" layer="95" font="vector" ratio="10" rot="R180" xref="yes"/>
+<wire x1="208.28" y1="104.14" x2="193.04" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="TARGET_VCC"/>
+<wire x1="193.04" y1="106.68" x2="193.04" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="162.56" x2="76.2" y2="167.64" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="167.64" x2="81.28" y2="167.64" width="0.1524" layer="91"/>
-<label x="81.28" y="167.64" size="1.27" layer="95" font="vector" ratio="10" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="TARGET_VCC"/>
 </segment>
 </net>
 </nets>
